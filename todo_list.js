@@ -46,14 +46,14 @@ addTask("Buy milk");
 addBtn.addEventListener("click", ()=>{
     let due_time = dateAndTimeToTimestamp(date,time);
     console.log(due_time);
-    if (due_time != false){
-        addTask(descInput.value, new Date(dateAndTimeToTimestamp(date,time)).toLocaleString());
-    }
-    else {
-        console.log("false");
-        addTask(descInput.value, "");
-    };
-    addTask(descInput.value, "");
+    // if (due_time != false){
+    //     addTask(descInput.value, new Date(dateAndTimeToTimestamp(date,time)).toLocaleString());
+    // }
+    // else {
+    //     console.log("false");
+    //     addTask(descInput.value, "");
+    // };
+    addTask(descInput.value, due_time);
     descInput.value = "";
     date.value = "";
     time.value = "";
@@ -63,15 +63,14 @@ body.addEventListener("keydown", (key)=>{
     if (key.code=="Enter") {
         let due_time = dateAndTimeToTimestamp(date,time);
         console.log(due_time);
-        if (due_time != false){
-            addTask(descInput.value, new Date(dateAndTimeToTimestamp(date,time)).toLocaleString());
-        }
-        else {
-            console.log("false");
-            addTask(descInput.value, "");
-        };
-        // let due_time = new Date(dateAndTimeToTimestamp(date,time)).toLocaleString();
-        // console.log(date, time);
+        // if (due_time != false){
+        //     addTask(descInput.value, new Date(dateAndTimeToTimestamp(date,time)).toLocaleString());
+        // }
+        // else {
+        //     console.log("false");
+        //     addTask(descInput.value, "");
+        // };
+        addTask(descInput.value, due_time);
         descInput.value = "";
         date.value = "";
         time.value = "";
